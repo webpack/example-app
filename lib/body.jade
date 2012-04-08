@@ -13,20 +13,33 @@
 	.row
 		.span6
 			.page-header
-				h1 
-					| webpack
+				h1
+					a(href="http://github.com/sokra/modules-webpack")
+						| webpack
 					small example web app
-			p Click the navigation items in the top bar to change right content.
-			p 
-				| The javascript for the different contents is loaded on demand by the webpack
+			p
+				| Click the navigation items in the top bar
+				|  to change right content.
+			p
+				| The javascript for the different contents
+				|  is loaded on demand by the webpack
 				code require.ensure
 				|  method
-			p Watch the outgoing request in your browsers dev tools.
-			p This demo is currently just a simple prototype, but I continue to work on it after vacation.
+			p
+				| Watch the outgoing requests
+				|  in your browsers dev tools.
+			p
+				| This demo is currently just a simple
+				|  prototype, but I continue to work
+				|  on it after vacation.
 			h2 client.js
 			pre: code= require("raw!./client.js")
 			h2 body.jade
 			pre: code= require("raw!./body.jade")
+			- var source = "http://github.com/sokra/"+
+			- "modules-webpack-example"
+			a(href=source)
+				| complete demo source
 		.span6
 			.page-header
 				h1
