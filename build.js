@@ -11,9 +11,9 @@ function run(cmd, cb) {
 }
 
 console.log("compiling javascript...");
-run("node ./node_modules/webpack/bin/webpack --colors --script-src-prefix js/ lib/client.js js/web.js", function() {
+run("node ./node_modules/webpack/bin/webpack --no-colors --script-src-prefix js/ lib/client.js js/web.js", function(output) {
 	console.log("compiling index.jade...");
-	require("fs").writeFile("index.html", require("./index.jade")({}), "utf-8", function(err) {
+	require("fs").writeFile("index.html", require("./index.jade")({output: output}), "utf-8", function(err) {
 		console.log("Ok");
 	});
 });

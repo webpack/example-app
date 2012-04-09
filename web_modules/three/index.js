@@ -1,2 +1,1 @@
-require("script!./Three.min.js");
-module.exports = THREE;
+module.exports = eval(require("raw!./Three.min.js") + ";THREE");

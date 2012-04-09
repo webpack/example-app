@@ -3,19 +3,23 @@
 .navbar.navbar-fixed-top
 	.navbar-inner
 		.container
+			a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
 			a.brand(href="#") webpack
-			ul.nav
-				li: a(href="#").buttons.button-home Home
-				li: a(href="#").buttons.button-test1 Test1
-				li: a(href="#").buttons.button-test2 Test2
-				li: a(href="#").buttons.button-test3 Test3
+			.nav-collapse
+				ul.nav
+					li: a(href="#").buttons.button-home Home
+					li: a(href="#").buttons.button-test1 Test1
+					li: a(href="#").buttons.button-test2 Test2
+					li: a(href="#").buttons.button-test3 Test3
 .container
 	.row
-		.span6
+		.span8
 			.page-header
 				h1
-					a(href="http://github.com/sokra/modules-webpack")
-						| webpack
+					| webpack
 					small example web app
 			p
 				| Click the navigation items in the top bar
@@ -23,7 +27,7 @@
 			p
 				| The javascript for the different contents
 				|  is loaded on demand by the webpack
-				code require.ensure
+				em require.ensure
 				|  method
 			p
 				| Watch the outgoing requests
@@ -32,15 +36,27 @@
 				| This demo is currently just a simple
 				|  prototype, but I continue to work
 				|  on it after vacation.
-			h2 client.js
-			pre: code= require("raw!./client.js")
-			h2 body.jade
-			pre: code= require("raw!./body.jade")
-			- var source = "http://github.com/sokra/"+
-			- "modules-webpack-example"
-			a(href=source)
-				| complete demo source
-		.span6
+			h2 source
+			- var gh = "http://github.com/sokra/";
+			- var sourceExample = gh+"modules-webpack-example/"
+			- var sourceWebpack = gh+"modules-webpack/"
+			p: a(href=sourceExample)
+				b 
+					| modules-webpack-example
+					|  on github
+			p: a(href=sourceWebpack)
+				b 
+					| modules-webpack
+					|  on github
+			h2 Choosen sources
+			#choosen-sources!= require("./loading.jade")();
+		.span4
+			.page-header
+				h1
+					| status
+					small loaded chunks
+			ul.chunks
+				li!= require("./chunk.jade")({chunk: 0});
 			.page-header
 				h1
 					| content

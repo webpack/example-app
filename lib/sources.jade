@@ -1,0 +1,26 @@
+ul.nav.nav-tabs
+	li.active
+		a(href="#client", data-toggle="tab")
+			| client.js
+	li
+		a(href="#body", data-toggle="tab")
+			| body.jade
+	li
+		a(href="#sources", data-toggle="tab")
+			| sources.jade
+	li
+		a(href="#output", data-toggle="tab")
+			| compilation output
+.tab-content
+	#client.tab-pane.active
+		pre.pre-scrollable
+			code= require("raw!./client.js")
+	#body.tab-pane
+		pre.pre-scrollable
+			code= require("raw!./body.jade")
+	#sources.tab-pane
+		pre.pre-scrollable
+			code= require("raw!./sources.jade")
+	#output.tab-pane
+		pre.pre-scrollable
+			code= window.webpack_output

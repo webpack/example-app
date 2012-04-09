@@ -4,7 +4,8 @@
 	"author": "Tobias Koppers @sokra",
 	"description": "example web app for webpack",
 	"dependencies": {
-		"webpack": "*"
+		"webpack": "0.3.x",
+		"jade-loader": "0.1.x"
 	},
 	"licenses": [
 		{
