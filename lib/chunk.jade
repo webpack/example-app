@@ -1,13 +1,15 @@
 - if(chunk === 0)
 	| inital bundle
-	span.badge= " " + chunk
+	= " "
+	span.badge= chunk
 	|  (
 	code web.js
 	| )
 	|  was loaded. (script-tag)
 - else
 	| bundle
-	span.badge.badge-success= " " + chunk
+	= " "
+	span.badge.badge-success= chunk
 	|  (
 	code
 		= chunk

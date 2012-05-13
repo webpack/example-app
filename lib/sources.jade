@@ -1,16 +1,20 @@
 ul.nav.nav-tabs
 	li.active
 		a(href="#client", data-toggle="tab")
-			| client.js
+			i.icon-off
+			|  client.js
 	li
 		a(href="#body", data-toggle="tab")
-			| body.jade
+			i.icon-leaf
+			|  body.jade
 	li
 		a(href="#sources", data-toggle="tab")
-			| sources.jade
+			i.icon-file
+			|  sources.jade
 	li
 		a(href="#output", data-toggle="tab")
-			| compilation output
+			i.icon-wrench
+			|  compilation output
 .tab-content
 	#client.tab-pane.active
 		pre.pre-scrollable

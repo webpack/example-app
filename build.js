@@ -11,7 +11,7 @@ function run(cmd, cb) {
 }
 
 console.log("compiling javascript...");
-run("node ./node_modules/webpack/bin/webpack --no-colors --script-src-prefix js/[hash]/ lib/client.js js/[hash]/web.js", function(output) {
+run("node ./node_modules/webpack/bin/webpack --no-colors --public-prefix asserts/ lib/client.js asserts/[hash].js", function(output) {
 	// Extract Hash (with --json it would be easier output.hash)
 	var pos = output.indexOf("Hash: ");
 	var hash = "ERROR";
