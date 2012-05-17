@@ -5,7 +5,9 @@
 	"description": "example web app for webpack",
 	"dependencies": {
 		"webpack": "0.4.x",
-		"jade-loader": "0.1.x"
+		"jade-loader": "0.1.x",
+		"raw-loader": "0.1.x",
+		"bootstrap": "git://github.com/twitter/bootstrap.git"
 	},
 	"licenses": [
 		{
