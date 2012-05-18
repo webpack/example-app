@@ -1,3 +1,4 @@
+- var i18n = require("i18n!./nls/sources.json");
 ul.nav.nav-tabs
 	li.active
 		a(href="#client", data-toggle="tab")
@@ -14,7 +15,7 @@ ul.nav.nav-tabs
 	li
 		a(href="#output", data-toggle="tab")
 			i.icon-wrench
-			|  compilation output
+			= " " + i18n.compilationOutput
 .tab-content
 	#client.tab-pane.active
 		pre.pre-scrollable

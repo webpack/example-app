@@ -1,5 +1,6 @@
 - require("mybootstrap");
 - require("./body.css");
+- var i18n = require("i18n!./nls/body.json");
 .navbar.navbar-fixed-top
 	.navbar-inner
 		.container
@@ -10,28 +11,19 @@
 			a.brand(href="#") webpack
 			.nav-collapse
 				ul.nav
-					li: a(href="#").buttons.button-home Home
-					li: a(href="#").buttons.button-test1 Test1
-					li: a(href="#").buttons.button-test2 Test2
-					li: a(href="#").buttons.button-test3 Test3
+					li: a(href="#").buttons.button-home= i18n.nav.home
+					li: a(href="#").buttons.button-test1= i18n.nav.test1
+					li: a(href="#").buttons.button-test2= i18n.nav.test2
+					li: a(href="#").buttons.button-test3= i18n.nav.test3
 .container
 	.row
 		.span8
 			.page-header
 				h1
 					| webpack
-					small example web app
-			p
-				| Click the navigation items in the top bar
-				|  to change right content.
-			p
-				| The javascript for the different contents
-				|  is loaded on demand by the webpack
-				em require.ensure
-				|  method
-			p
-				| Watch the outgoing requests
-				|  in your browsers dev tools.
+					small  example web app
+			!= require("i18n/choose!jade!./nls/body-info.jade").call();
+			= "Locales: " + require("i18n/concat!./nls/locale.js").locales.join(" + ");
 			h2 source
 			- var gh = "http://github.com/sokra/";
 			- var sourceExample = gh+"modules-webpack-example/"
@@ -39,22 +31,22 @@
 			p: a(href=sourceExample)
 				b 
 					| modules-webpack-example
-					|  on github
+					= " " + i18n.ongithub
 			p: a(href=sourceWebpack)
 				b 
 					| modules-webpack
-					|  on github
-			h2 Choosen sources
+					= " " + i18n.ongithub
+			h2= i18n.choosenSources
 			#choosen-sources!= require("./loading.jade")();
 		.span4
 			.page-header
 				h1
-					| status
-					small loaded chunks
+					= i18n.status
+					small= " " + i18n.loadedChunks
 			ul.chunks
 				li!= require("./chunk.jade")({chunk: 0});
 			.page-header
 				h1
-					| content
-					small some test content
+					= i18n.content
+					small= " " + i18n.contentDetail
 			.content

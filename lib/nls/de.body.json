@@ -1,0 +1,17 @@
+{
+	"nav": {
+		"home": "Startseite"
+	},
+	"info": {
+		"line": [
+			"Klick auf die Navigationselement in der oberen Leiste um den Inhalt rechts zu ändern.",
+			"Der Javascript Code für die unterschiedlichen Inhalte wird bei Bedarf geladen (durch webpack' <em>require.ensure</em> Methode).",
+			"Du kannst der die ausgehenden Anfragen in den Entwicklungstools deines Browsers anzeigen lassen."]
+	},
+	"ongithub": "auf Github",
+	"choosenSources": "Ausgewählte Quellen",
+	"status": "Status",
+	"loadedChunks": "geladene Stücke",
+	"content": "Inhalt",
+	"contentDetail": "etwas Testinhalt"
+}
