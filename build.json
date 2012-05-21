@@ -1,5 +1,7 @@
 {
+	"output": "asserts/[hash].js",
 	"publicPrefix": "asserts/",
+	"watch": true,
 	"i18n": {
 		"locales": ["de"]
 	}
