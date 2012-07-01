@@ -5,12 +5,6 @@
 		"test2": "Test2",
 		"test3": "Test3"
 	},
-	"info": {
-		"line": [
-			"Click the navigation items in the top bar to change right content.",
-			"The javascript for the different contents is loaded on demand by the webpack <em>require.ensure</em> method.",
-			"Watch the outgoing requests in your browsers dev tools."]
-	},
 	"ongithub": "on github",
 	"choosenSources": "Choosen sources",
 	"status": "status",
