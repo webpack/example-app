@@ -7,6 +7,7 @@
 		"webpack": "0.4.x",
 		"jade-loader": "0.1.x",
 		"raw-loader": "0.1.x",
+		"i18n-loader": "0.1.x",
 		"bootstrap": "https://github.com/twitter/bootstrap/tarball/v2.0.4"
 	},
 	"licenses": [
