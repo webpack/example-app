@@ -4,11 +4,10 @@
 	"author": "Tobias Koppers @sokra",
 	"description": "example web app for webpack",
 	"dependencies": {
-		"webpack": "0.4.x",
+		"webpack": "0.5.x",
 		"jade-loader": "0.1.x",
 		"raw-loader": "0.1.x",
-		"i18n-loader": "0.1.x",
-		"bootstrap": "https://github.com/twitter/bootstrap/tarball/v2.0.4"
+		"i18n-loader": "0.1.x"
 	},
 	"licenses": [
 		{

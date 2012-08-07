@@ -1,3 +1,4 @@
-/node_modules
-/asserts
-/index.html
+node_modules
+jam
+assets
+index.html
