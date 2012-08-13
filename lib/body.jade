@@ -25,16 +25,16 @@
 			!= require("i18n/choose!jade!./nls/body-info.jade").call();
 			= "Locales: " + require("i18n/concat!./nls/locale.js").locales.join(" + ");
 			h2 source
-			- var gh = "http://github.com/sokra/";
-			- var sourceExample = gh+"modules-webpack-example/"
-			- var sourceWebpack = gh+"modules-webpack/"
+			- var gh = "http://github.com/webpack/";
+			- var sourceExample = gh+"example-app/"
+			- var sourceWebpack = gh+"webpack/"
 			p: a(href=sourceExample)
 				b 
-					| modules-webpack-example
+					| example-app
 					= " " + i18n.ongithub
 			p: a(href=sourceWebpack)
 				b 
-					| modules-webpack
+					| webpack
 					= " " + i18n.ongithub
 			h2= i18n.choosenSources
 			#choosen-sources!= require("./loading.jade")();
