@@ -1,1 +1,1 @@
-module.exports = require("val!./wrapper");
+module.exports = require("./loader!./Three.min.js");

@@ -2,6 +2,7 @@
 	"output": "assets/[hash].js",
 	"publicPrefix": "assets/",
 	"watch": true,
+	"workers": true,
 	"i18n": {
 		"locales": ["de"]
 	}

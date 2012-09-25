@@ -4,10 +4,12 @@
 	"author": "Tobias Koppers @sokra",
 	"description": "example web app for webpack",
 	"dependencies": {
-		"webpack": "0.5.x",
-		"jade-loader": "0.1.x",
-		"raw-loader": "0.1.x",
-		"i18n-loader": "0.1.x"
+		"webpack": "0.7.x",
+		"enhanced-require": "0.3.x",
+		"jade-loader": "0.2.x",
+		"json-loader": "0.2.x",
+		"raw-loader": "0.2.x",
+		"i18n-loader": "0.3.x"
 	},
 	"licenses": [
 		{

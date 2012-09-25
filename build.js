@@ -1,4 +1,4 @@
-require = require("webpack/require-polyfill")(require.valueOf());
+require = require("enhanced-require")(module);
 
 var webpack = require("webpack");
 var webpackFormatOutput = require("webpack/lib/formatOutput");
