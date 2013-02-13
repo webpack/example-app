@@ -15,10 +15,10 @@ module.exports = {
 			{ test: /\.css$/,    loader: "style-loader!css-loader" },
 			{ test: /\.less$/,   loader: "style-loader!css-loader!less-loader" },
 			{ test: /\.jade$/,   loader: "jade-loader" },
-			{ test: /\.png$/,    loader: "url-loader?prefix=img/&limit=10000&minetype=image/png" },
-			{ test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=10000&minetype=image/jpg" },
-			{ test: /\.gif$/,    loader: "url-loader?prefix=img/&limit=10000&minetype=image/gif" },
-			{ test: /\.woff$/,   loader: "url-loader?prefix=font/&limit=10000&minetype=application/font-woff" }
+			{ test: /\.png$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/png" },
+			{ test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/jpg" },
+			{ test: /\.gif$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/gif" },
+			{ test: /\.woff$/,   loader: "url-loader?prefix=font/&limit=5000&minetype=application/font-woff" }
 		],
 		preLoaders: [
 			{
