@@ -1,0 +1,18 @@
+- if(chunk === 0)
+	| inital bundle
+	= " "
+	span.badge= chunk
+	|  (
+	code web.js
+	| )
+	|  was loaded. (script-tag)
+- else
+	| bundle
+	= " "
+	span.badge.badge-success= chunk
+	|  (
+	code
+		= chunk
+		| .web.js
+	| )
+	|  was loaded. (asynchron)

@@ -1,0 +1,23 @@
+ul.nav.nav-tabs
+	li.active
+		a(href="#app", data-toggle="tab")
+			i.icon-off
+			|  app.js
+	li
+		a(href="#body", data-toggle="tab")
+			i.icon-leaf
+			|  body.jade
+	li
+		a(href="#sources", data-toggle="tab")
+			i.icon-file
+			|  sources.jade
+.tab-content
+	#app.tab-pane.active
+		pre.pre-scrollable
+			code= require("!raw!./app.js")
+	#body.tab-pane
+		pre.pre-scrollable
+			code= require("!raw!./body.jade")
+	#sources.tab-pane
+		pre.pre-scrollable
+			code= require("!raw!./sources.jade")

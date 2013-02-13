@@ -1,1 +1,1 @@
-module.exports = require("./loader!./Three.min.js");
+module.exports = require("exports?THREE!./Three.min.js");

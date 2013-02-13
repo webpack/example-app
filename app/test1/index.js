@@ -5,9 +5,9 @@ exports.render = function() {
 exports.start = function() {
 	var THREE = require("three");
 	require("jquery");
-	
+
 	// three.js canvas - camera - orthographic example
-	
+
 	var container, stats;
 	var camera, scene, renderer;
 
@@ -15,7 +15,7 @@ exports.start = function() {
 	animate();
 
 	function init() {
-	
+
 		camera = new THREE.OrthographicCamera( -400, 400, 400, -400, - 2000, 1000 );
 		camera.position.x = 200;
 		camera.position.y = 100;
@@ -84,10 +84,10 @@ exports.start = function() {
 
 		renderer = new THREE.CanvasRenderer();
 		renderer.setSize( 400, 400 );
-		
+
 		$(".three-container").append(renderer.domElement);
 	}
-	
+
 	function animate() {
 		if($(".three-container").length > 0) {
 			requestAnimationFrame( animate );
