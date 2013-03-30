@@ -1,22 +1,29 @@
 {
 	"name": "example-app",
-	"version": "0.9.0",
+	"version": "0.10.0",
 	"author": "Tobias Koppers @sokra",
 	"description": "example web app for webpack",
 	"dependencies": {
-		"webpack": "0.9.x",
+		"webpack": "0.10.x",
+		"webpack-dev-server": "0.10.x",
 		"jade-loader": "0.5.x",
 		"json-loader": "0.5.x",
 		"url-loader": "0.5.x",
 		"file-loader": "0.5.x",
-		"coffee-loader": "0.5.x",
+		"coffee-loader": "0.6.x",
 		"jshint-loader": "0.5.x",
 		"bundle-loader": "0.5.x",
 		"style-loader": "0.5.x",
-		"css-loader": "0.5.x",
+		"css-loader": "0.6.x",
 		"less-loader": "0.5.x",
-		"exports-loader": "0.5.x",
+		"exports-loader": "0.6.x",
 		"raw-loader": "0.5.x"
+	},
+	"jam": {
+		"dependencies": {
+			"bootstrap": "2.2.2",
+			"jquery": "1.9.1"
+		}
 	},
 	"licenses": [
 		{
@@ -24,9 +31,11 @@
 			"url": "http://www.opensource.org/licenses/mit-license.php"
 		}
 	],
+	"scripts": {
+		"start": "webpack-dev-server -d --colors --content-page index.html"
+	},
 	"engines": {
 		"node":  ">=0.1.30"
 	},
-	"homepage": "http://github.com/sokra/modules-webpack-example",
-	"license": "MIT"
+	"homepage": "http://github.com/webpack/webpack-example"
 }

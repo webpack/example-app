@@ -1,6 +1,6 @@
 exports.render = function() {
 	return require("./content.jade")();
-}
+};
 
 exports.start = function() {
 	var THREE = require("three");
@@ -37,7 +37,7 @@ exports.start = function() {
 			line.position.z = ( i * 50 ) - 500;
 			scene.add( line );
 
-			var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.2 } ) );
+			line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.2 } ) );
 			line.position.x = ( i * 50 ) - 500;
 			line.rotation.y = 90 * Math.PI / 180;
 			scene.add( line );
@@ -46,10 +46,10 @@ exports.start = function() {
 
 		// Cubes
 
-		var geometry = new THREE.CubeGeometry( 50, 50, 50 );
+		geometry = new THREE.CubeGeometry( 50, 50, 50 );
 		var material = new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading, overdraw: true } );
 
-		for ( var i = 0; i < 100; i ++ ) {
+		for ( i = 0; i < 100; i ++ ) {
 
 			var cube = new THREE.Mesh( geometry, material );
 
@@ -75,7 +75,7 @@ exports.start = function() {
 		directionalLight.position.normalize();
 		scene.add( directionalLight );
 
-		var directionalLight = new THREE.DirectionalLight( Math.random() * 0xffffff );
+		directionalLight = new THREE.DirectionalLight( Math.random() * 0xffffff );
 		directionalLight.position.x = Math.random() - 0.5;
 		directionalLight.position.y = Math.random() - 0.5;
 		directionalLight.position.z = Math.random() - 0.5;
@@ -103,4 +103,4 @@ exports.start = function() {
 
 		renderer.render( scene, camera );
 	}
-}
+};

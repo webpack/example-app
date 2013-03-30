@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v2.0.4
+ * Bootstrap v2.2.2
  *
  * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
@@ -12,6 +12,7 @@
 @import "~bootstrap/less/reset.less";
 
 // Core variables and mixins
+@import "~bootstrap/less/variables.less";
 @import "variables.less"; // Modify this for custom colors, font-sizes, etc
 @import "~bootstrap/less/mixins.less";
 
@@ -52,6 +53,7 @@
 
 // Components: Misc
 // @import "~bootstrap/less/thumbnails.less";
+// @import "~bootstrap/less/media.less";
 @import "~bootstrap/less/labels-badges.less";
 @import "~bootstrap/less/progress-bars.less";
 // @import "~bootstrap/less/accordion.less";
@@ -74,14 +76,14 @@ body {
 // MEDIA QUERIES
 // ------------------
 
-// Phones to portrait tablets and narrow desktops
-@import "~bootstrap/less/responsive-767px-max.less";
+// Large desktops
+@import "~bootstrap/less/responsive-1200px-min.less";
 
 // Tablets to regular desktops
 @import "~bootstrap/less/responsive-768px-979px.less";
 
-// Large desktops
-@import "~bootstrap/less/responsive-1200px-min.less";
+// Phones to portrait tablets and narrow desktops
+@import "~bootstrap/less/responsive-767px-max.less";
 
 
 // RESPONSIVE NAVBAR

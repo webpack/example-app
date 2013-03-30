@@ -14,7 +14,7 @@ module.exports = {
 			{ test: /\.coffee$/, loader: "coffee-loader" },
 			{ test: /\.css$/,    loader: "style-loader!css-loader" },
 			{ test: /\.less$/,   loader: "style-loader!css-loader!less-loader" },
-			{ test: /\.jade$/,   loader: "jade-loader" },
+			{ test: /\.jade$/,   loader: "jade-loader?self" },
 			{ test: /\.png$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/png" },
 			{ test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/jpg" },
 			{ test: /\.gif$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/gif" },
@@ -41,5 +41,5 @@ module.exports = {
 	plugins: [
 	]
 };
-function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\?\.\\^\$\|]/g, "\$&"); }
+function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
 function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }

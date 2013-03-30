@@ -1,7 +1,7 @@
-- if(chunk === 0)
+- if(self.chunk === 0)
 	| inital bundle
 	= " "
-	span.badge= chunk
+	span.badge= self.chunk
 	|  (
 	code web.js
 	| )
@@ -9,10 +9,10 @@
 - else
 	| bundle
 	= " "
-	span.badge.badge-success= chunk
+	span.badge.badge-success= self.chunk
 	|  (
 	code
-		= chunk
+		= self.chunk
 		| .web.js
 	| )
 	|  was loaded. (asynchron)

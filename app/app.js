@@ -74,10 +74,10 @@ window.webpackJsonp = function(chunk, modules) {
 	$(function() {
 		append();
 		function append() {
-			if($(".chunks").length == 0) {
+			if($(".chunks").length === 0) {
 				return setTimeout(append, 100);
 			}
-			if(list.length == 0) return;
+			if(list.length === 0) return;
 			var chunk = list.shift();
 			var li = $("<li>")
 				.html(require("./chunk.jade")
