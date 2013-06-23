@@ -1,0 +1,4 @@
+webpackHotUpdate("6dadde0526c020713b15",1,{23:function(e,t,n){var r=n(1);e.exports=function(e,t,o,a,i){t=t||r.attrs,o=o||r.escape,a=a||r.rethrow,i=i||r.merge;var s=[];s.push('<div class="alert alert-warning"><span>This is the <em>second</em> test. (Updated Version 2)</span></div><h2>test2.jade</h2><pre><code>');var p=n(33);return s.push(o(null==p?"":p)),s.push("</code></pre>"),s.join("")}},24:function(e,t,n){var r=n(1);e.exports=function(e,t,n,o,a){t=t||r.attrs,n=n||r.escape,o=o||r.rethrow,a=a||r.merge;var i=[];i.push('<div class="alert alert-error">This is the');var s=" ";return i.push(n(null==s?"":s)),i.push("<b>last</b> test. (Updated Version 2)</div>"),i.join("")}},33:function(e){e.exports='.alert.alert-warning\r\n	span This is the <em>second</em> test. (Updated Version 2)\r\nh2 test2.jade\r\npre: code= require("!raw!./test2.jade")'}});
+/*
+//@ sourceMappingURL=6a62d6a4103f1c5803f5/js/1.update.js.map
+*/
