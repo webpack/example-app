@@ -41,6 +41,20 @@
 					small  loaded chunks
 			ul.chunks
 				li!= require("./chunk.jade")({chunk: 0});
+			if module.hot
+				.page-header
+					h1 HMR
+						small  hot module replacement
+				p
+					b Status:
+					= " "
+					span.hot-status idle
+				p.hot-result
+				button.btn.hot-check Check for update
+				button.btn.hot-apply Apply update
+				label.checkbox
+					input.hot-strategy(type="checkbox", checked=true)
+					|  Replace current page
 			.page-header
 				h1 content
 					small  some test content

@@ -6,8 +6,10 @@ module.exports = {
 		path: path.join(__dirname, "assets"),
 		publicPath: "assets/", // relative path for github pages
 		filename: "main.js", // no hash in main.js because index.html is a static page
-		chunkFilename: "[hash]/js/[id].js"
+		chunkFilename: "[hash]/js/[id].js",
+		hotUpdateChunkFilename: "[hash]/js/[id].update.js"
 	},
+	recordsOutputPath: path.join(__dirname, "records.json"),
 	module: {
 		loaders: [
 			{ test: /\.json$/,   loader: "json-loader" },
@@ -25,6 +27,11 @@ module.exports = {
 				test: /\.js$/,
 				include: pathToRegExp(path.join(__dirname, "app")),
 				loader: "jshint-loader"
+			},
+			{
+				// Simulate updates to showcase the hot module replacement
+				test: pathToRegExp(path.join(__dirname, "app")),
+				loader: path.join(__dirname, "fake-update.js")
 			}
 		]
 	},
@@ -39,7 +46,8 @@ module.exports = {
 		maxChunks: 20,
 	},
 	plugins: [
-	]
+	],
+	fakeUpdateVersion: 0
 };
 function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
 function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }

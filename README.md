@@ -12,7 +12,9 @@ cd example-app
 npm install
 jam install
 
-webpack -p --progress --colors --devtool sourcemap
+webpack -p --progress --colors --devtool sourcemap --hot
+webpack -p --progress --colors --devtool sourcemap --hot --config webpack-update1.config.js
+webpack -p --progress --colors --devtool sourcemap --hot --config webpack-update2.config.js
 index.html
 ```
 
@@ -22,6 +24,8 @@ For watching and debugging you can alternatively compile with:
 
 ``` text
 webpack -d --progress --colors --watch
+webpack -d --progress --colors --watch --config webpack-update1.config.js
+webpack -d --progress --colors --watch --config webpack-update2.config.js
 ```
 
 Or use the development server:

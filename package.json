@@ -1,11 +1,11 @@
 {
 	"name": "example-app",
-	"version": "0.10.0",
+	"version": "0.11.0",
 	"author": "Tobias Koppers @sokra",
 	"description": "example web app for webpack",
 	"dependencies": {
-		"webpack": "0.10.x",
-		"webpack-dev-server": "0.10.x",
+		"webpack": "0.11.x",
+		"webpack-dev-server": "0.11.x",
 		"jade-loader": "0.5.x",
 		"json-loader": "0.5.x",
 		"url-loader": "0.5.x",
@@ -13,7 +13,7 @@
 		"coffee-loader": "0.6.x",
 		"jshint-loader": "0.5.x",
 		"bundle-loader": "0.5.x",
-		"style-loader": "0.5.x",
+		"style-loader": "0.6.x",
 		"css-loader": "0.6.x",
 		"less-loader": "0.5.x",
 		"exports-loader": "0.6.x",

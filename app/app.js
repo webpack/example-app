@@ -1,5 +1,6 @@
 var $ = require("jquery");
 
+require("./style.css");
 var body = require("./body.jade")();
 require("bundle!./sources.jade")(function(sources) {
 	$(function() {
@@ -9,10 +10,33 @@ require("bundle!./sources.jade")(function(sources) {
 $(function() {
 	document.title = "webpack example-app";
 	$("body").html(body);
-	$(".button-home").click(loadHome);
-	$(".button-test1").click(loadTest1);
-	$(".button-test2").click(loadTest2);
-	$(".button-test3").click(loadTest3);
+	$(".button-home").click(loadPage.bind(null, "home"));
+	$(".button-test1").click(loadPage.bind(null, "test1"));
+	$(".button-test2").click(loadPage.bind(null, "test2"));
+	$(".button-test3").click(loadPage.bind(null, "test3"));
+	if(module.hot) {
+		module.hot.setApplyOnUpdate(false);
+		var hotResult = $(".hot-result");
+		$(".hot-check").click(function() {
+			try {
+				module.hot.check(function(err, updatedModules) {
+					if(err) return hotResult.text(err.toString());
+					if(updatedModules) hotResult.text("Updated modules: " + updatedModules.join(", "));
+				});
+			} catch(e) { hotResult.text(e.toString()); }
+		});
+		$(".hot-apply").click(function() {
+			try {
+				module.hot.apply(function(err, renewedModules) {
+					if(err) return hotResult.text(err.toString());
+					if(renewedModules) hotResult.text("Renewed modules: " + renewedModules.join(", "));
+				});
+			} catch(e) { hotResult.text(e.toString()); }
+		});
+		module.hot.status(function(newStatus, oldStatus) {
+			$(".hot-status").text(newStatus);
+		});
+	}
 });
 
 var isLoading = false;
@@ -29,41 +53,37 @@ function finished() {
 	isLoading = false;
 }
 
-function loadHome() {
-	if(loading("home")) return;
-	require([], function() {
+var pages = require("./pages");
+
+var currentPage, currentPageName;
+function loadPage(name) {
+	if(loading(name)) return;
+	pages.getPage(name, function(item) {
+		currentPageName = name;
+		currentPage = item;
 		finished();
-		$(".content").html(require("./home.jade")());
+		if(typeof item === "function") {
+			$(".content").html(item());
+		} else {
+			$(".content").html(item.render());
+			item.start();
+		}
 	});
 	return false;
 }
 
-function loadTest1() {
-	if(loading("test1")) return;
-	require(["./test1"], function(item) {
-		finished();
-		$(".content").html(item.render());
-		item.start();
+if(module.hot) {
+	module.hot.accept("./pages", function() {
+		pages = require("./pages");
+		if(!$(".hot-strategy").prop("checked")) return;
+		pages.getPage(currentPageName, function(item) {
+			if(currentPage !== item) {
+				loading("");
+				finished();
+				loadPage(currentPageName);
+			}
+		});
 	});
-	return false;
-}
-
-function loadTest2() {
-	if(loading("test2")) return;
-	require.ensure([], function() {
-		finished();
-		$(".content").html(require("./test2.jade")());
-	}, "test2+3");
-	return false;
-}
-
-function loadTest3() {
-	if(loading("test3")) return;
-	require.ensure([], function(require) {
-		finished();
-		$(".content").html(require("./test3.jade")());
-	}, "test2+3");
-	return false;
 }
 
 // HACK to get chunk loading info
