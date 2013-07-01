@@ -6,7 +6,7 @@ Install and build this app with:
 
 ``` text
 # You need to have node.js installed
-npm install jamjs webpack@0.10.x webpack-dev-server@0.10.x -g
+npm install jamjs webpack@0.11.x webpack-dev-server@0.11.x -g
 
 cd example-app
 npm install
@@ -24,8 +24,6 @@ For watching and debugging you can alternatively compile with:
 
 ``` text
 webpack -d --progress --colors --watch
-webpack -d --progress --colors --watch --config webpack-update1.config.js
-webpack -d --progress --colors --watch --config webpack-update2.config.js
 ```
 
 Or use the development server:
