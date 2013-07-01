@@ -7,6 +7,7 @@ module.exports = {
 		publicPath: "assets/", // relative path for github pages
 		filename: "main.js", // no hash in main.js because index.html is a static page
 		chunkFilename: "[hash]/js/[id].js",
+		hotUpdateMainFilename: "[hash]/update.json",
 		hotUpdateChunkFilename: "[hash]/js/[id].update.js"
 	},
 	recordsOutputPath: path.join(__dirname, "records.json"),
