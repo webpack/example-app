@@ -1,21 +1,20 @@
-- require("mybootstrap");
-.navbar.navbar-fixed-top
-	.navbar-inner
-		.container
-			a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
-				span.icon-bar
-				span.icon-bar
-				span.icon-bar
-			a.brand(href="#") webpack
-			.nav-collapse
-				ul.nav
-					li: a(href="#").buttons.button-home Home
-					li: a(href="#").buttons.button-test1 Test1
-					li: a(href="#").buttons.button-test2 Test2
-					li: a(href="#").buttons.button-test3 Test3
+- require("bootstrap/less/bootstrap.less");
+- require("bootstrap/js/dropdown.js");
+- require("bootstrap/js/button.js");
+- require("bootstrap/js/collapse.js");
+- require("bootstrap/js/tab.js");
+nav.navbar.navbar-default.navbar-top
+	.container
+		.navbar-header
+			a.navbar-brand(href="#") webpack
+			ul.nav.navbar-nav
+				li: a(href="#").buttons.button-home Home
+				li: a(href="#").buttons.button-test1 Test1
+				li: a(href="#").buttons.button-test2 Test2
+				li: a(href="#").buttons.button-test3 Test3
 .container
 	.row
-		.span8
+		.col-md-8
 			.page-header
 				h1
 					| webpack
@@ -34,13 +33,13 @@
 				b
 					| webpack on github
 			h2 Choosen sources
-			#choosen-sources!= require("./loading.jade")();
-		.span4
+			#choosen-sources!= require("./loading.jade")()
+		.col-md-4
 			.page-header
 				h1 status
 					small  loaded chunks
 			ul.chunks
-				li!= require("./chunk.jade")({chunk: 0});
+				li!= require("./chunk.jade")({chunk: 0})
 			if module.hot
 				.page-header
 					h1 HMR
@@ -50,8 +49,8 @@
 					= " "
 					span.hot-status idle
 				p.hot-result
-				button.btn.hot-check Check for update
-				button.btn.hot-apply Apply update
+				button.btn.btn-default.hot-check Check for update
+				button.btn.btn-default.hot-apply Apply update
 				label.checkbox
 					input.hot-strategy(type="checkbox", checked=true)
 					|  Replace current page

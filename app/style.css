@@ -1,9 +1,9 @@
 body {}
 ------
-.navbar-inner {
-	background: #FFA;
+.navbar-default {
+	background: #FFA !important;
 }
 ------
-.navbar-inner {
-	background: #AFA;
+.navbar-default {
+	background: #AFA !important;
 }

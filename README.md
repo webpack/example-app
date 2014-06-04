@@ -6,7 +6,7 @@ Install and build this app with:
 
 ``` text
 # You need to have node.js installed
-npm install jamjs webpack@0.11.x webpack-dev-server@0.11.x -g
+npm install jamjs@0.2.x webpack@1.2.x webpack-dev-server@1.2.x -g
 
 cd example-app
 npm install
@@ -31,7 +31,7 @@ Or use the development server:
 ``` text
 npm start
 # which is equal to
-webpack-dev-server -d --colors --content-page index.html
+webpack-dev-server -d --colors
 ```
 
 And open [http://localhost:8080](http://localhost:8080).

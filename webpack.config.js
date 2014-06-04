@@ -1,3 +1,4 @@
+var webpack = require("webpack");
 var path = require("path");
 module.exports = {
 	context: __dirname,
@@ -18,10 +19,13 @@ module.exports = {
 			{ test: /\.css$/,    loader: "style-loader!css-loader" },
 			{ test: /\.less$/,   loader: "style-loader!css-loader!less-loader" },
 			{ test: /\.jade$/,   loader: "jade-loader?self" },
-			{ test: /\.png$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/png" },
-			{ test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/jpg" },
-			{ test: /\.gif$/,    loader: "url-loader?prefix=img/&limit=5000&minetype=image/gif" },
-			{ test: /\.woff$/,   loader: "url-loader?prefix=font/&limit=5000&minetype=application/font-woff" }
+			{ test: /\.png$/,    loader: "url-loader?prefix=img/&limit=5000" },
+			{ test: /\.jpg$/,    loader: "url-loader?prefix=img/&limit=5000" },
+			{ test: /\.gif$/,    loader: "url-loader?prefix=img/&limit=5000" },
+			{ test: /\.woff$/,   loader: "url-loader?prefix=font/&limit=5000" },
+			{ test: /\.eot$/,    loader: "file-loader?prefix=font/" },
+			{ test: /\.ttf$/,    loader: "file-loader?prefix=font/" },
+			{ test: /\.svg$/,    loader: "file-loader?prefix=font/" },
 		],
 		preLoaders: [
 			{
@@ -39,16 +43,11 @@ module.exports = {
 	resolve: {
 		root: path.join(__dirname, "jam")
 	},
-	console: true,
-	cache: true,
 	amd: { jQuery: true },
-	optimize: {
-		// minChunkSize: 10000, // we don't want this for demo purposes
-		maxChunks: 20,
-	},
 	plugins: [
+		new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 20 })
 	],
-	fakeUpdateVersion: 0
+	fakeUpdateVersion: 1
 };
 function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
 function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }
