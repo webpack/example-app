@@ -41,7 +41,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		root: path.join(__dirname, "jam")
+		fallback: path.join(__dirname, "jam")
 	},
 	amd: { jQuery: true },
 	plugins: [
