@@ -47,7 +47,7 @@ module.exports = {
 	plugins: [
 		new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 20 })
 	],
-	fakeUpdateVersion: 1
+	fakeUpdateVersion: 0
 };
 function escapeRegExpString(str) { return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&"); }
 function pathToRegExp(p) { return new RegExp("^" + escapeRegExpString(p)); }
