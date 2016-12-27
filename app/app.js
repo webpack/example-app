@@ -1,8 +1,8 @@
 var $ = require("jquery");
 
 require("./style.css");
-var body = require("./body.jade")();
-require("bundle!./sources.jade")(function(sources) {
+var body = require("./body.pug")();
+require("bundle-loader!./sources.pug")(function(sources) {
 	$(function() {
 		$("#choosen-sources").html(sources());
 	});
@@ -46,7 +46,7 @@ function loading(name) {
 	isLoading = true;
 	$(".buttons").parent().removeClass("active");
 	$(".button-"+name).parent().addClass("active");
-	$(".content").html(require("./loading.jade"));
+	$(".content").html(require("./loading.pug"));
 }
 
 function finished() {
@@ -100,7 +100,7 @@ window.webpackJsonp = function(chunk, modules) {
 			if(list.length === 0) return;
 			var chunk = list.shift();
 			var li = $("<li>")
-				.html(require("./chunk.jade")
+				.html(require("./chunk.pug")
 					({chunk: chunk}));
 			$(".chunks").append(li);
 			append();

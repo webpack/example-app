@@ -1,14 +1,14 @@
 .alert.alert-warning
 	span This is the <em>second</em> test.
-h2 test2.jade
-pre: code= require("!raw!./test2.jade")
-------
+h2 test2.pug
+pre: code= require("!raw-loader!./test2.pug")
+
 .alert.alert-warning
 	span This is the <b>second</b> test. (Updated Version 1)
-h2 test2.jade
-pre: code= require("!raw!./test2.jade")
-------
+h2 test2.pug
+pre: code= require("!raw-loader!./test2.pug")
+
 .alert.alert-warning
 	span This is the <em>second</em> test. (Updated Version 2)
-h2 test2.jade
-pre: code= require("!raw!./test2.jade")
+h2 test2.pug
+pre: code= require("!raw-loader!./test2.pug")
