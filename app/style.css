@@ -1,9 +1,5 @@
 body {}
-------
+
 .navbar-default {
-	background: #FFA !important;
-}
-------
-.navbar-default {
-	background: #AFA !important;
+	background: #dedede !important;
 }

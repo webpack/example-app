@@ -1,24 +1,21 @@
 # webpack webapp example
 
-For demonstration this app uses `npm` and `jam` package manager.
+For demonstration this app uses `npm` package manager.
 
 Install and build this app with:
 
 ``` text
 # You need to have node.js installed
-npm install jamjs@0.2.x webpack@1.2.x webpack-dev-server@1.2.x -g
+npm install
 
 cd example-app
 npm install
-jam install
 
 webpack -p --progress --colors --devtool sourcemap --hot
 webpack -p --progress --colors --devtool sourcemap --hot --config webpack-update1.config.js
 webpack -p --progress --colors --devtool sourcemap --hot --config webpack-update2.config.js
 index.html
 ```
-
-NOTE: It's a production ready build, so it may take a while.
 
 For watching and debugging you can alternatively compile with:
 

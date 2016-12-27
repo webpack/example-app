@@ -33,13 +33,13 @@ nav.navbar.navbar-default.navbar-top
 				b
 					| webpack on github
 			h2 Choosen sources
-			#choosen-sources!= require("./loading.jade")()
+			#choosen-sources!= require("./loading.pug")()
 		.col-md-4
 			.page-header
 				h1 status
 					small  loaded chunks
 			ul.chunks
-				li!= require("./chunk.jade")({chunk: 0})
+				li!= require("./chunk.pug")({chunk: 0})
 			if module.hot
 				.page-header
 					h1 HMR

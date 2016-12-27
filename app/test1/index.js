@@ -1,9 +1,9 @@
 exports.render = function() {
-	return require("./content.jade")();
+	return require("./content.pug")();
 };
 
 exports.start = function() {
-	var THREE = require("three");
+	var THREE = require("../../web_modules/three/index.js");
 	require("jquery");
 
 	// three.js canvas - camera - orthographic example

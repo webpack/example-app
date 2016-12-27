@@ -6,18 +6,18 @@ ul.nav.nav-tabs
 	li
 		a(href="#body", data-toggle="tab")
 			i.icon-leaf
-			|  body.jade
+			|  body.pug
 	li
 		a(href="#sources", data-toggle="tab")
 			i.icon-file
-			|  sources.jade
+			|  sources.pug
 .tab-content
 	#app.tab-pane.active
 		pre.pre-scrollable
-			code= require("!raw!./app.js")
+			code= require("!raw-loader!./app.js")
 	#body.tab-pane
 		pre.pre-scrollable
-			code= require("!raw!./body.jade")
+			code= require("!raw-loader!./body.pug")
 	#sources.tab-pane
 		pre.pre-scrollable
-			code= require("!raw!./sources.jade")
+			code= require("!raw-loader!./sources.pug")
